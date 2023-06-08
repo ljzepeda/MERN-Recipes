@@ -19,7 +19,7 @@ code {
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
   --tan-4: #D3C1AE;
-  --orange: #F67F00;
+  --green: #53ca6f;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -37,7 +37,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: var(--white);
   padding: 2vmin;
   height: 100vh;
 }
@@ -102,7 +102,7 @@ code {
 }
 
 p.error-message {
-  color: var(--orange);
+  color: var(--green);
   text-align: center;
 }
 
@@ -131,7 +131,7 @@ input {
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: var(--green);
 }
 
 button,
@@ -139,7 +139,7 @@ a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: var(--green);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
