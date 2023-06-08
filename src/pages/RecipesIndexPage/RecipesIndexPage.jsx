@@ -14,7 +14,7 @@ export default function RecipesIndexPage() {
     }, [])
     return (
         <>
-            <h1>Here are your favorite recipes</h1>
+            <h1>Here are your recipes</h1>
             <RecipesList recipes={recipes}></RecipesList>
         </>
     )

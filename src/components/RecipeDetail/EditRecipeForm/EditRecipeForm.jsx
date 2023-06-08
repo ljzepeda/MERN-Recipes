@@ -27,7 +27,7 @@ export default function EditRecipeForm({ recipe, setRecipe, setEditFormIsOpen })
     }
     return (
         <>
-            <h3>edit</h3>
+            <h3>Edit</h3>
             {error && <p>{JSON.stringify(error)}</p>}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
