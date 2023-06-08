@@ -1,17 +1,17 @@
-const Song = require('../../models/song')
+const Recipe = require('../../models/recipe')
 
 module.exports = {
     index,
     create,
     detail,
-    deleteSong,
+    deleteRecipe,
     update
 }
 
 async function index(req, res) {
     try {
-        const songs = await Song.find();
-        res.status(200).json(songs)
+        const recipes = await Recipe.find();
+        res.status(200).json(recipes)
     } catch (err) {
         res.status(400).json(err)
     }
@@ -20,8 +20,8 @@ async function index(req, res) {
 async function create(req, res) {
     try {
         req.body.uploaded_by = req.user._id;
-        const newSong = await Song.create(req.body);
-        res.status(201).json(newSong)
+        const newRecipe = await Recipe.create(req.body);
+        res.status(201).json(newRecipe)
     } catch (err) {
         console.log(err)
         res.status(400).json(err)
@@ -30,17 +30,17 @@ async function create(req, res) {
 
 async function detail(req, res) {
     try {
-        const song = await Song.findById(req.params.id)
-        res.status(200).json(song)
+        const recipe = await Recipe.findById(req.params.id)
+        res.status(200).json(recipe)
     } catch (err) {
         console.log(err)
         res.status(400).json(err)
     }
 }
 
-async function deleteSong(req, res) {
+async function deleteRecipe(req, res) {
     try {
-        await Song.findByIdAndDelete(req.params.id)
+        await Recipe.findByIdAndDelete(req.params.id)
         res.status(200).json({
             data: 'success'
         })
@@ -51,8 +51,8 @@ async function deleteSong(req, res) {
 
 async function update(req, res) {
     try {
-        const updatedSong = await Song.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        res.status(200).json(updatedSong)
+        const updatedRecipe = await Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        res.status(200).json(updatedRecipe)
     } catch (err) {
         console.log(err);
         res.status(400).json('Bad Request')

@@ -8,14 +8,21 @@ export default function LoginForm({ setUser }) {
     });
     const [error, setError] = useState('');
 
-    function handleChange(e) {
-        setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    function handleChange(evt) {
+        setCredentials({
+            ...credentials,
+            [evt.target.name]: evt.target.value
+        });
         setError('');
     }
 
-    async function handleSubmit(e) {
-        e.preventDefault();
+    async function handleSubmit(evt) {
+        // Prevent form from being submitted to the server
+        evt.preventDefault();
         try {
+            // The promise returned by the signUp service method 
+            // will resolve to the user object included in the
+            // payload of the JSON Web Token (JWT)
             const user = await usersService.login(credentials);
             setUser(user);
         } catch {
@@ -25,21 +32,16 @@ export default function LoginForm({ setUser }) {
 
     return (
         <div>
-
             <div className="form-container">
                 <form autoComplete="off" onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email</label>
-                        <input type="text" className="form-control" id="email" name="email" value={credentials.email} onChange={handleChange} required />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="password" className="form-label">Password</label>
-                        <input type="password" className="form-control" id="password" name="password" value={credentials.password} onChange={handleChange} required />
-                    </div>
-                    <button type="submit" className="btn btn-primary">LOG IN</button>
+                    <label>Email</label>
+                    <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
+                    <label>Password</label>
+                    <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+                    <button type="submit">LOG IN</button>
                 </form>
-                {error && <p className="error-message">{error}</p>}
             </div>
+            <p className="error-message">&nbsp;{error}</p>
         </div>
     );
 }

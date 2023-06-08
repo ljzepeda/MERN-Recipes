@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken')
 
 module.exports = function (req, res, next) {
     let token = req.get('Authorization') || req.query.token;
@@ -7,10 +7,10 @@ module.exports = function (req, res, next) {
         jwt.verify(token, process.env.SECRET, function (err, decoded) {
             req.user = err ? null : decoded.user;
             req.exp = err ? null : new Date(decoded.exp * 1000);
-            return next();
-        });
+            return next()
+        })
     } else {
         req.user = null;
-        return next();
+        return next()
     }
-};
+}

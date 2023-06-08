@@ -1,7 +1,7 @@
 import AuthPage from '../AuthPage/AuthPage';
-import NewSongPage from '../NewSongPage/NewSongPage';
-import SongsIndexPage from '../SongsIndexPage/SongsIndexPage';
-import SongDetailPage from '../SongDetailPage/SongDetailPage';
+import NewRecipePage from '../NewRecipePage/NewRecipePage';
+import RecipesIndexPage from '../RecipesIndexPage/RecipesIndexPage';
+import RecipeDetailPage from '../RecipeDetailPage/RecipeDetailPage';
 import HomePage from '../HomePage/HomePage';
 import './App.css';
 import { useState } from 'react';
@@ -19,9 +19,9 @@ export default function App() {
           <NavBar setUser={setUser} user={user}></NavBar>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/songs/new" element={<NewSongPage />} />
-            <Route path="/songs" element={<SongsIndexPage />} />
-            <Route path="/songs/:songId" element={<SongDetailPage />} />
+            <Route path="/recipes/new" element={<NewRecipePage />} />
+            <Route path="/recipes" element={<RecipesIndexPage />} />
+            <Route path="/recipes/:recipeId" element={<RecipeDetailPage />} />
           </Routes>
         </>
         :
