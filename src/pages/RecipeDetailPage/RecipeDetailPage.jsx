@@ -32,7 +32,7 @@ export default function RecipeDetailPage() {
     }
     return (
         <>
-            <h1>Here's a recipe</h1>
+            <h1>Recipe</h1>
             {loading ? <p>Loading....</p>
                 :
                 error ? <p>{error}</p>

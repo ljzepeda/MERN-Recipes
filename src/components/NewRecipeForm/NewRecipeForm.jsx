@@ -6,9 +6,11 @@ export default function NewRecipeForm() {
     const navigate = useNavigate();
     const titleRef = useRef('')
     const servingsRef = useRef('')
-    const cuisineRef = useRef('')
+    const mealRef = useRef('')
     const favoriteRef = useRef('')
     const descriptionRef = useRef('')
+    const ingredientsRef = useRef('')
+    const instructionsRef = useRef('')
     const [error, setError] = useState('')
     async function handleSubmit(e) {
         e.preventDefault()
@@ -16,9 +18,11 @@ export default function NewRecipeForm() {
         const newRecipe = {
             title: titleRef.current.value,
             servings: servingsRef.current.value,
-            cuisine: cuisineRef.current.value,
+            meal: mealRef.current.value,
             favorite: favoriteRef.current.checked,
-            description: descriptionRef.current.value
+            description: descriptionRef.current.value,
+            ingredients: ingredientsRef.current.value,
+            instructions: instructionsRef.current.value
         }
         try {
             const newRecipeResponse = await createRecipeRequest(newRecipe)
@@ -36,8 +40,8 @@ export default function NewRecipeForm() {
                 <input type="text" id="title" ref={titleRef} />
                 <label htmlFor="servings">Servings</label>
                 <input type="number" id="servings" ref={servingsRef} />
-                <label htmlFor="cuisine">Cuisine</label>
-                <select name="cuisine" id="cuisine" ref={cuisineRef}>
+                <label htmlFor="meal">Meal</label>
+                <select name="meal" id="meal" ref={mealRef}>
                     <option value="Breakfast">Breakfast</option>
                     <option value="Brunch">Brunch</option>
                     <option value="Lunch">Lunch</option>
@@ -49,6 +53,10 @@ export default function NewRecipeForm() {
                 <input type="checkbox" id="favorite" ref={favoriteRef} />
                 <label htmlFor="description">Description</label>
                 <input type="text" id="description" ref={descriptionRef} />
+                <label htmlFor="ingredients">Ingredients</label>
+                <input type="text" id="ingredients" ref={ingredientsRef} />
+                <label htmlFor="instructions">Instructions</label>
+                <input type="text" id="instructions" ref={instructionsRef} />
                 <button>Create the Recipe</button>
             </form>
         </>

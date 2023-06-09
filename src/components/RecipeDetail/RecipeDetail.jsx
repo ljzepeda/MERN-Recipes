@@ -13,9 +13,11 @@ export default function RecipeDetail({ recipe, handleDelete, setRecipe }) {
             <div>
                 <h3>{recipe.title}</h3>
                 <p>Servings: {recipe.servings}</p>
-                <p>Cuisine: {recipe.cuisine}</p>
+                <p>Meal: {recipe.meal}</p>
                 {recipe.favorite && <p>Favorite</p>}
                 <p>Description: {recipe.description}</p>
+                <p>Ingredients: {recipe.ingredients}</p>
+                <p>Instructions: {recipe.instructions}</p>
                 <button onClick={handleDelete}>DELETE {recipe.title}</button>
                 <button onClick={toggleEditForm}>
                     {editFormIsOpen ? "Close Editor" : "Edit"}

@@ -6,18 +6,22 @@ export default function EditRecipeForm({ recipe, setRecipe, setEditFormIsOpen })
     const navigate = useNavigate();
     const titleRef = useRef(recipe.title)
     const servingsRef = useRef(recipe.servings)
-    const cuisineRef = useRef(recipe.cuisine)
+    const mealRef = useRef(recipe.meal)
     const favoriteRef = useRef(recipe.favorite)
     const descriptionRef = useRef(recipe.description)
+    const ingredientsRef = useRef(recipe.ingredients)
+    const instructionsRef = useRef(recipe.instructions)
     const [error, setError] = useState('')
     async function handleSubmit(e) {
         e.preventDefault()
         const updatedRecipe = {
             title: titleRef.current.value,
             servings: servingsRef.current.value,
-            cuisine: cuisineRef.current.value,
+            meal: mealRef.current.value,
             favorite: favoriteRef.current.checked,
-            description: descriptionRef.current.value
+            description: descriptionRef.current.value,
+            ingredients: ingredientsRef.current.value,
+            instructions: instructionsRef.current.value
         }
         try {
             const newRecipe = await updateRecipeRequest(recipe._id, updatedRecipe)
@@ -29,15 +33,15 @@ export default function EditRecipeForm({ recipe, setRecipe, setEditFormIsOpen })
     }
     return (
         <>
-            <h3>Edit</h3>
+            <h3>Edit Recipe</h3>
             {error && <p>{JSON.stringify(error)}</p>}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
                 <input type="text" id="title" ref={titleRef} defaultValue={recipe.title} />
                 <label htmlFor="servings">Servings</label>
                 <input type="number" id="servings" ref={servingsRef} defaultValue={recipe.servings} />
-                <label htmlFor="cuisine">Cuisine</label>
-                <select name="cuisine" id="cuisine" ref={cuisineRef} defaultValue={recipe.cuisine}>
+                <label htmlFor="meal">Meal</label>
+                <select name="meal" id="meal" ref={mealRef} defaultValue={recipe.meal}>
                     <option value="Breakfast">Breakfast</option>
                     <option value="Brunch">Brunch</option>
                     <option value="Lunch">Lunch</option>
@@ -49,6 +53,10 @@ export default function EditRecipeForm({ recipe, setRecipe, setEditFormIsOpen })
                 <input type="checkbox" id="favorite" defaultChecked={recipe.favorite} ref={favoriteRef} />
                 <label htmlFor="description">Description</label>
                 <input type="text" id="description" ref={descriptionRef} defaultValue={recipe.description} />
+                <label htmlFor="ingredients">Ingredients</label>
+                <input type="text" id="ingredients" ref={ingredientsRef} defaultValue={recipe.ingredients} />
+                <label htmlFor="instructions">Instructions</label>
+                <input type="text" id="instructions" ref={instructionsRef} defaultValue={recipe.instructions} />
                 <button>Edit the Recipe</button>
             </form>
         </>

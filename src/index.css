@@ -170,3 +170,10 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: var(--green);
+}
