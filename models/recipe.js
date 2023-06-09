@@ -6,8 +6,9 @@ const recipeSchema = new Schema({
     servings: { type: Number, required: true },
     cuisine: { type: String, required: true },
     favorite: { type: Boolean, required: true },
-    uploaded_by: { type: Schema.Types.ObjectId, ref: 'User' }
+    uploaded_by: { type: Schema.Types.ObjectId, ref: 'User' },
     // authors, reviews
+    description: { type: String, required: true }
 }, {
     timestamps: true,
 });

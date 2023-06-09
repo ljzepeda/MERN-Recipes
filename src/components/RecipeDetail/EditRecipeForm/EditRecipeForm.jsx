@@ -8,6 +8,7 @@ export default function EditRecipeForm({ recipe, setRecipe, setEditFormIsOpen })
     const servingsRef = useRef(recipe.servings)
     const cuisineRef = useRef(recipe.cuisine)
     const favoriteRef = useRef(recipe.favorite)
+    const descriptionRef = useRef(recipe.description)
     const [error, setError] = useState('')
     async function handleSubmit(e) {
         e.preventDefault()
@@ -15,7 +16,8 @@ export default function EditRecipeForm({ recipe, setRecipe, setEditFormIsOpen })
             title: titleRef.current.value,
             servings: servingsRef.current.value,
             cuisine: cuisineRef.current.value,
-            favorite: favoriteRef.current.checked
+            favorite: favoriteRef.current.checked,
+            description: descriptionRef.current.value
         }
         try {
             const newRecipe = await updateRecipeRequest(recipe._id, updatedRecipe)
@@ -45,6 +47,8 @@ export default function EditRecipeForm({ recipe, setRecipe, setEditFormIsOpen })
                 </select>
                 <label htmlFor="favorite">Favorite?</label>
                 <input type="checkbox" id="favorite" defaultChecked={recipe.favorite} ref={favoriteRef} />
+                <label htmlFor="description">Description</label>
+                <input type="text" id="description" ref={descriptionRef} defaultValue={recipe.description} />
                 <button>Edit the Recipe</button>
             </form>
         </>

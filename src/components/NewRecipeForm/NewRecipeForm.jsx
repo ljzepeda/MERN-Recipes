@@ -8,6 +8,7 @@ export default function NewRecipeForm() {
     const servingsRef = useRef('')
     const cuisineRef = useRef('')
     const favoriteRef = useRef('')
+    const descriptionRef = useRef('')
     const [error, setError] = useState('')
     async function handleSubmit(e) {
         e.preventDefault()
@@ -16,7 +17,8 @@ export default function NewRecipeForm() {
             title: titleRef.current.value,
             servings: servingsRef.current.value,
             cuisine: cuisineRef.current.value,
-            favorite: favoriteRef.current.checked
+            favorite: favoriteRef.current.checked,
+            description: descriptionRef.current.value
         }
         try {
             const newRecipeResponse = await createRecipeRequest(newRecipe)
@@ -45,6 +47,8 @@ export default function NewRecipeForm() {
                 </select>
                 <label htmlFor="favorite">Favorite?</label>
                 <input type="checkbox" id="favorite" ref={favoriteRef} />
+                <label htmlFor="description">Description</label>
+                <input type="text" id="description" ref={descriptionRef} />
                 <button>Create the Recipe</button>
             </form>
         </>
