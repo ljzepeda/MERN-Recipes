@@ -1,3 +1,51 @@
+# MERN-Recipes
+Recipes allows you to document recipe list for easy access while cooking.  
+
+☐ A working full-stack, single-page application hosted on Heroku.
+
+☐ Incorporates MERN-stack technologies: 
+
+- MongoDB/Mongoose
+- Express
+- React
+- Node
+
+☐ Well-styled interactive front-end. 
+
+☐ Communicates with the Express backend via AJAX.
+
+☐ Implements token-based authentication. Including the ability of a user to sign-up, log in & log out.
+
+☐ Implements authorization by restricting CUD data functionality to authenticated users. Navigation responds to the login status of the user.
+
+☐ Well-scoped feature-set (full-CRUD data operations). 
+
+# Screenshot
+
+![Recipes - Recipes List]()
+
+![Recipes - Recipe Details]()
+
+# Technologies Used
+
+- MongoDB/Mongoose
+- Express
+- React
+- Node
+- Heroku
+
+# Getting Started
+
+[Click to View Recipes]()
+
+# Next Steps
+
+- Future enhancements would be to include valdations, AWS image upload, enhanced CSS styling, additional class properties and adding additional authorization permissions.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
