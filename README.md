@@ -22,7 +22,7 @@ Recipes allows you to document recipe list for easy access while cooking.
 
 # Screenshot
 
-![Recipes - Recipe Details](https://github.com/ljzepeda/MERN-Recipes/assets/127067223/94e785d5-d665-4b99-a16a-c9abdec42c2d)
+![Recipes - Recipe Details](https://github.com/ljzepeda/MERN-Recipes/assets/127067223/3332e588-532e-4932-9182-46b236259368)
 
 # Technologies Used
 
