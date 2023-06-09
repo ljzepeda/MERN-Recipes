@@ -22,9 +22,7 @@ Recipes allows you to document recipe list for easy access while cooking.
 
 # Screenshot
 
-![Recipes - Recipes List]()
-
-![Recipes - Recipe Details]()
+![Recipes - Recipe Details](https://github.com/ljzepeda/MERN-Recipes/assets/127067223/94e785d5-d665-4b99-a16a-c9abdec42c2d)
 
 # Technologies Used
 
@@ -36,7 +34,7 @@ Recipes allows you to document recipe list for easy access while cooking.
 
 # Getting Started
 
-[Click to View Recipes]()
+[Click to View Recipes](https://mern-recipes-ljz.herokuapp.com/)
 
 # Next Steps
 
